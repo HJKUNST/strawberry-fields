@@ -1,6 +1,5 @@
 name: "Gereksiz"
 markdown: kramdown
-highlighter: pygments
 permalink: :title
 exclude: [README.md, LICENSE, Makefile]
 
