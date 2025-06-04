@@ -64,9 +64,12 @@ template {
  */
 
 html {
-    font-family: sans-serif; /* 1 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    font-family: sans-serif;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
 }
 
 /**
@@ -117,6 +120,7 @@ a:hover {
 
 h1 {
     font-size: 1.5em;
+    font-weight: 600;
     margin: 1em 0;
 }
 
@@ -172,7 +176,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: Menlo, Monaco, "Courier New", monospace, serif;
+    font-family: "Satoshi-Variable", "Open Sans", sans-serif;
     /* font-size: 1em; */
 }
 
@@ -272,8 +276,10 @@ fieldset {
  */
 
 legend {
-    border: 0; /* 1 */
-    padding: 0; /* 2 */
+    border: 0;
+    /* 1 */
+    padding: 0;
+    /* 2 */
 }
 
 /**
@@ -286,9 +292,12 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 2 */
+    margin: 0;
+    /* 3 */
 }
 
 /**
@@ -322,11 +331,14 @@ select {
  */
 
 button,
-html input[type="button"], /* 1 */
+html input[type="button"],
+/* 1 */
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
+    -webkit-appearance: button;
+    /* 2 */
+    cursor: pointer;
+    /* 3 */
 }
 
 /**
@@ -345,8 +357,10 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */
 }
 
 /**
@@ -356,9 +370,11 @@ input[type="radio"] {
  */
 
 input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
+    -webkit-appearance: textfield;
+    /* 1 */
     -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
+    -webkit-box-sizing: content-box;
+    /* 2 */
     box-sizing: content-box;
 }
 
@@ -388,8 +404,10 @@ input::-moz-focus-inner {
  */
 
 textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
+    overflow: auto;
+    /* 1 */
+    vertical-align: top;
+    /* 2 */
 }
 
 /* ==========================================================================
@@ -407,5 +425,7 @@ table {
 
 /* responsive attempt */
 @media screen and (min-width: 308px) {
-   .rwd-break { display: none; }
+    .rwd-break {
+        display: none;
+    }
 }

@@ -1,12 +1,12 @@
-name: "Gereksiz"
+name: "Strawberry Fields"
 markdown: kramdown
 permalink: :title
 exclude: [README.md, LICENSE, Makefile]
 
 # Information for the Atom feed
-gereksiz:
-   author: "John Doe"
-   email: "john.doe@mail.sexy"
+strawberry-fields:
+   author: "HJKUNST"
+   email: "whiskyhibiki1@gmail.com"
 
 url: "https://hjkunst.github.io/"
 baseurl: ""
