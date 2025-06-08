@@ -4,10 +4,14 @@
    font-family: "Satoshi-Variable";
    src: url("fonts/Satoshi-Variable.woff2") format("woff2");
    font-weight: 300 900;
+   font-display: swap;
+}
 
+@font-face {
    font-family: "Cygnito-Mono-Regular";
-   src: url("fonts/cygnito-mono-regular.woff2") format("woff2");
+   src: url("./fonts/cygnito-mono-regular.woff2") format("woff2");
    font-weight: 400;
+   font-display: swap;
 }
 
 /* Some assumptions */
@@ -25,8 +29,8 @@ html {
 
 body {
    height: auto;
-   background-color: #EBF4F6;
-   font-family: 1.3rem "Satoshi-Variable", "Open Sans", sans-serif;
+   background-color: #eaf3f5;
+   font-family: "Satoshi-Variable", "Open Sans", sans-serif;
    font-weight: 300;
    font-size: 1.3rem;
    -webkit-font-smoothing: antialiased;
@@ -43,34 +47,83 @@ main {
    padding-right: 18px;
 }
 
+/* .category {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   left: clamp(16px, 5vw, 80px);
+   padding: 12px 24px;
+   background-color: rgba(239, 241, 245, 0.3);
+   box-shadow: 0px 0px 24px #D8E5EE;
+   border-radius: 24px;
+   z-index: 10;
+   width: 60px;
+   height: 360px;
+} */
+
 .cardWrapper {
    display: flex;
+   flex-direction: column;
    gap: 8px;
 }
+
+
 
 .cards {
    display: flex;
    flex-wrap: wrap;
+   align-items: flex-start;
    gap: 8px;
    max-width: 1000px;
    width: 100%;
+   z-index: 1;
 }
 
 .card {
    flex: 1 1 300px;
-   min-width: 400px;
+   /* min-width: 400px; */
    min-height: 260px;
    padding: 12px 24px;
    background-color: rgba(239, 241, 245, 0.3);
    box-shadow: 0px 0px 24px #D8E5EE;
    border-radius: 24px;
- }
+}
 
-.card--allArticles {
-   flex-basis: 100%;
-   flex-grow: 1;
-   flex-shrink: 1;
- }
+.articleRow {
+   display: flex;
+   flex-direction: row;
+   gap: 8px;
+   width: 100%;
+   max-width: 1000px;
+}
+
+.card--category {
+   height: 600px;
+   overflow-y: auto;
+   flex: 0 0 200px;
+   min-height: 0;
+}
+
+.card--viewArticles {
+   height: 600px;
+   overflow-y: auto;
+   flex: 1 1 auto;
+   min-height: 0;
+}
+
+.categoryList {
+   font-family: "Satoshi-Variable", "Open Sans", sans-serif;
+   font-size: 1rem;
+   font-weight: 300;
+   font-style: italic;
+   text-decoration: underline;
+   color: rgba(231, 76, 60, 0.6);
+   line-height: 2.4rem;
+}
+
+.categoryItem:hover {
+   color: #e74c3c;
+}
 
 h1 {
    color: #e74c3c;
@@ -159,11 +212,13 @@ a:hover {
 .title {
    display: inline-block;
    line-height: 0.5em;
+   margin-bottom: 2rem;
 }
 
 .title a {
    font-family: "Cygnito-Mono-Regular", "Satoshi-Variable", sans-serif;
    color: rgba(231, 76, 60, 1);
+   margin-bottom: 2rem;
    font-weight: 600;
    letter-spacing: 0.003em;
    font-style: normal;
