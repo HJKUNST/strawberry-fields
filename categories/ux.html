@@ -1,0 +1,16 @@
+---
+layout: default
+title: UX Articles
+permalink: /categories/ux/
+category: UX
+---
+
+<h2>Posts in "{{ page.category }}" Category</h2>
+<ul class="posts">
+  {% assign cat = page.category | downcase | slugify %}
+  {% for post in site.posts %}
+    {% if post.categories contains page.category %}
+      <li><span>{{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

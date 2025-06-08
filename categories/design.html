@@ -1,0 +1,15 @@
+
+---
+layout: default
+title: design
+---
+
+<h1>Posts in "Design" Category</h1>
+<ul>
+  {% for post in site.categories.design %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+  {% endfor %}
+</ul>

@@ -23,22 +23,48 @@ title: Strawberry Fields
                <h2>Category</h2>
 
                <div class="categoryList">
-                  <h4 class="categoryItem">All</h4>
-                  <h4 class="categoryItem">UX</h4>
-                  <h4 class="categoryItem">Front End</h4>
-               </div>
+                  <h4 class="categoryItem" data-category="all">All</h4>
+                  {% for category in site.categories %}
+                    {% assign cat = category[0] %}
+                    <h4 class="categoryItem" data-category="{{ cat | downcase | slugify }}">{{ cat }}</h4>
+                  {% endfor %}
+                </div>
             </div>
             <div class="card card--viewArticles">
                <h2>View Articles</h2>
                <ul class="posts">
                   {% for post in site.posts %}
-                  <li><span>&gt; {{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+                    <li data-category="{{ post.categories[0] | downcase | slugify }}">
+                      <span>&gt; {{ post.date | date_to_string }}</span>
+                      <a href="{{ post.url }}">{{ post.title }}</a>
+                
+                      {% if post.categories %}
+                        <span class="tags">
+                          {% for category in post.categories %}
+                            <span class="tag">{{ category }}</span>
+                          {% endfor %}
+                        </span>
+                      {% endif %}
+                    </li>
                   {% endfor %}
-               </ul>
+                </ul>
             </div>
          </div>
       </div>
    </div>
-
-
 </div>
+
+<script>
+   document.querySelectorAll('.categoryItem').forEach(item => {
+     item.addEventListener('click', () => {
+       const selected = item.getAttribute('data-category');
+       document.querySelectorAll('.posts li').forEach(post => {
+         if (selected === 'all' || post.getAttribute('data-category') === selected) {
+           post.style.display = 'list-item';
+         } else {
+           post.style.display = 'none';
+         }
+       });
+     });
+   });
+ </script>
