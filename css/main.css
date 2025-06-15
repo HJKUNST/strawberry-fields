@@ -3,7 +3,7 @@
 @font-face {
    font-family: "Satoshi-Variable";
    src: url("fonts/Satoshi-Variable.woff2") format("woff2");
-   font-weight: 300 900;
+   font-weight: 300 500 900;
    font-display: swap;
 }
 
@@ -12,6 +12,52 @@
    src: url("./fonts/cygnito-mono-regular.woff2") format("woff2");
    font-weight: 400;
    font-display: swap;
+}
+
+/* Radix-inspired spacing scale variables */
+:root {
+   --space-1: 4px;
+   --space-2: 8px;
+   --space-3: 12px;
+   --space-4: 16px;
+   --space-5: 24px;
+   --space-6: 32px;
+   --space-7: 40px;
+   --space-8: 48px;
+   --space-9: 64px;
+
+   /* Radix typography scale */
+   --font-size-1: 12px;
+   --font-size-2: 14px;
+   --font-size-3: 16px;
+   --font-size-4: 18px;
+   --font-size-5: 20px;
+   --font-size-6: 24px;
+   --font-size-7: 28px;
+   --font-size-8: 35px;
+   --font-size-9: 60px;
+
+   /* Corresponding line heights */
+   --line-height-1: 16px;
+   --line-height-2: 20px;
+   --line-height-3: 24px;
+   --line-height-4: 26px;
+   --line-height-5: 28px;
+   --line-height-6: 30px;
+   --line-height-7: 36px;
+   --line-height-8: 40px;
+   --line-height-9: 60px;
+
+   /* Letter spacing */
+   --letter-spacing-1: 0.0025em;
+   --letter-spacing-2: 0em;
+   --letter-spacing-3: 0em;
+   --letter-spacing-4: -0.0025em;
+   --letter-spacing-5: -0.005em;
+   --letter-spacing-6: -0.00625em;
+   --letter-spacing-7: -0.0075em;
+   --letter-spacing-8: -0.01em;
+   --letter-spacing-9: -0.025em;
 }
 
 /* Some assumptions */
@@ -32,7 +78,8 @@ body {
    background-color: #eaf3f5;
    font-family: "Satoshi-Variable", "Open Sans", sans-serif;
    font-weight: 300;
-   font-size: 1.3rem;
+   font-size: var(--font-size-5);
+   line-height: 1.7;
    -webkit-font-smoothing: antialiased;
    text-align: center;
 }
@@ -40,11 +87,11 @@ body {
 main {
    font-size: 100%;
    text-align: left;
-   margin: 2em auto 0.5em;
-   line-height: 1.5em;
+   margin: var(--space-6) auto var(--space-2);
+   line-height: 1.5;
    max-width: 70rem;
-   padding-left: 18px;
-   padding-right: 18px;
+   padding-left: var(--space-4);
+   padding-right: var(--space-4);
 }
 
 /* .category {
@@ -64,16 +111,14 @@ main {
 .cardWrapper {
    display: flex;
    flex-direction: column;
-   gap: 8px;
+   gap: var(--space-2);
 }
-
-
 
 .cards {
    display: flex;
    flex-wrap: wrap;
    align-items: flex-start;
-   gap: 8px;
+   gap: var(--space-2);
    max-width: 1000px;
    width: 100%;
    z-index: 1;
@@ -83,7 +128,7 @@ main {
    flex: 1 1 300px;
    /* min-width: 400px; */
    min-height: 260px;
-   padding: 12px 24px;
+   padding: var(--space-3) var(--space-5);
    background-color: rgba(239, 241, 245, 0.3);
    box-shadow: 0px 0px 24px #D8E5EE;
    border-radius: 24px;
@@ -92,7 +137,7 @@ main {
 .articleRow {
    display: flex;
    flex-direction: row;
-   gap: 8px;
+   gap: var(--space-2);
    width: 100%;
    max-width: 1000px;
 }
@@ -113,12 +158,12 @@ main {
 
 .categoryList {
    font-family: "Satoshi-Variable", "Open Sans", sans-serif;
-   font-size: 1rem;
+   font-size: var(--font-size-3);
    font-weight: 300;
    font-style: italic;
    text-decoration: underline;
    color: rgba(231, 76, 60, 0.6);
-   line-height: 2.4rem;
+   line-height: 1.8;
 }
 
 .categoryItem:hover {
@@ -126,53 +171,74 @@ main {
 }
 
 h1 {
-   color: #e74c3c;
-   font-weight: 500;
+   line-height: 1.2;
+   color: rgba(231, 76, 80, 1);
+   font-weight: 800;
    font-style: italic;
-   font-size: 1.5rem;
+   font-size: var(--font-size-7);
+   letter-spacing: var(--letter-spacing-7);
+   margin-bottom: var(--space-4);
 }
 
 h2 {
-   font-size: 140%;
-   margin: 1em 0em 1em 0em;
+   line-height: 1.3;
    color: rgba(231, 76, 80, 1);
-   font-weight: 500;
+   font-weight: 600;
    font-style: italic;
-   font-size: 1.3rem;
+   font-size: var(--font-size-6);
+   letter-spacing: var(--letter-spacing-6);
+   margin-bottom: var(--space-3);
+   margin-top: var(--space-5);
 }
 
 h3 {
-   font-size: 100%;
+   font-size: var(--font-size-5);
+   font-weight: 400;
+   font-style: italic;
+   line-height: 1.4;
+   letter-spacing: var(--letter-spacing-5);
+   color: rgba(231, 76, 80, 1);
+   margin-bottom: var(--space-2);
+   margin-top: var(--space-6);
 }
 
 h4 {
-   font-size: 100%;
+   font-size: var(--font-size-4);
+   font-weight: 600;
+   font-style: italic;
+   line-height: 1.4;
+   letter-spacing: var(--letter-spacing-5);
+   color: rgba(231, 76, 80, 1);
+   margin-bottom: var(--space-2);
+   margin-top: var(--space-4);
 }
 
-h5 {
-   font-size: 100%;
-}
 
-h6 {
-   font-size: 100%;
-}
 
 p {
-   padding: 8px 8px;
-   font-size: 1rem;
-   line-height: 1.8rem;
+   padding: var(--space-3) 0px;
+   font-size: var(--font-size-3);
+   line-height: 1.8;
+   margin: var(--space-4) 0;
+   border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+li {
+   font-size: var(--font-size-3);
+   line-height: 1.8;
+   margin-bottom: var(--space-4) 0;
 }
 
 hr {
    border: none;
-   border-top: 1px solid #ccc;
-   margin: 1rem 0;
+   border-top: 1px solid rgba(52, 152, 219, 0.2);
+   margin: var(--space-4) 0;
 }
 
 /* Gentle links */
 a {
-   font-size: 1.1rem;
-   line-height: 1.8rem;
+   font-size: var(--font-size-4);
+   line-height: 1.8;
    color: #3498DB;
    text-decoration: none;
 }
@@ -184,21 +250,22 @@ a:hover {
 /* -------------- The blog posts archive, a long list----------- */
 .posts {
    list-style-type: none;
-   margin-bottom: 2em;
+   margin-bottom: var(--space-6);
 }
 
 .posts li {
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
-   line-height: 1.8em;
+   line-height: 1.8;
+   margin-bottom: var(--space-2);
 }
 
 .posts span {
    color: #aaa;
    font-family: "Satoshi-Variable", "Open Sans", sans-serif;
-   font-size: 75%;
-   margin-right: 1em;
+   font-size: var(--font-size-2);
+   margin-right: var(--space-3);
 }
 
 /* Don't display date if screen is small */
@@ -211,24 +278,24 @@ a:hover {
 /* the website's name on the header */
 .title {
    display: inline-block;
-   line-height: 0.5em;
-   margin-bottom: 2rem;
+   line-height: 1.2;
+   margin-bottom: var(--space-6);
 }
 
 .title a {
    font-family: "Cygnito-Mono-Regular", "Satoshi-Variable", sans-serif;
    color: rgba(231, 76, 60, 1);
-   margin-bottom: 2rem;
+   margin-bottom: var(--space-6);
    font-weight: 600;
    letter-spacing: 0.003em;
    font-style: normal;
-   font-size: 1.6rem;
+   font-size: var(--font-size-6);
 }
 
 .markdown-body a {
    color: #005E9D;
    font-weight: 500;
-   font-size: 1rem;
+   font-size: var(--font-size-3);
    font-style: italic;
    text-decoration: underline;
 }
@@ -237,19 +304,16 @@ a:hover {
    color: #000;
 }
 
-/* .title {
-   margin-top: .4em;
-} */
-
 .meta {
    color: #aaa;
+   margin-bottom: var(--space-4);
 }
 
 code {
    font-family: "IBM Plex Mono", monospace !important;
    font-weight: 500;
-   padding: .25em .5em;
-   font-size: 80%;
+   padding: var(--space-1) var(--space-2);
+   font-size: var(--font-size-2);
    color: #007ED2;
    background-color: rgba(52, 152, 219, 0.1);
    border-radius: 3px;
@@ -258,10 +322,10 @@ code {
 pre {
    font-family: "IBM Plex Mono", monospace;
    display: block;
-   margin: 4px 0 14px;
-   padding: 20px 30px;
-   font-size: 1rem;
-   line-height: 1.6;
+   margin: var(--space-4) 0 var(--space-5);
+   padding: var(--space-6) var(--space-7);
+   font-size: var(--font-size-3);
+   line-height: 1.8;
    white-space: pre;
    white-space: pre-wrap;
    word-break: break-all;
@@ -273,13 +337,13 @@ pre {
 
 pre code {
    padding: 0;
-   font-size: 80%;
+   font-size: var(--font-size-2);
    color: inherit;
    background-color: transparent;
 }
 
 .highlight {
-   margin-bottom: 15px;
+   margin-bottom: var(--space-4);
    border-radius: 4px;
 }
 
@@ -288,8 +352,8 @@ pre code {
 }
 
 blockquote {
-   padding: 0px 18px;
-   margin: 15px 0;
+   padding: 0px var(--space-4);
+   margin: var(--space-4) 0;
    border-left: 4px solid rgba(52, 73, 94, 0.85);
 }
 
@@ -305,8 +369,9 @@ article {
 
 article ul,
 article ol {
-   margin-left: 1.35em;
-   margin-bottom: 0.7em;
+   margin-left: var(--space-5);
+   margin-bottom: var(--space-4);
+   margin-top: var(--space-2);
 }
 
 /* Rounded corners, aligned, etc. */
@@ -317,12 +382,15 @@ article img {
    display: block;
    margin-left: auto;
    margin-right: auto;
+   margin-top: var(--space-4);
+   margin-bottom: var(--space-4);
    max-width: 80%;
    page-break-inside: avoid;
 }
 
 footer {
    height: 2.5em;
+   margin-top: var(--space-8);
 }
 
 footer #date {
@@ -331,7 +399,7 @@ footer #date {
 
 footer #return,
 footer #date {
-   font-size: 0.9rem;
+   font-size: var(--font-size-2);
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
